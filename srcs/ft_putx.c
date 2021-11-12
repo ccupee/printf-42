@@ -18,4 +18,5 @@ void	ft_putx(unsigned int number, int *n)
 
 	str = ft_hexademical_lower0(number);
 	*n += write(1, str, ft_strlen(str));
+	free(str);
 }
