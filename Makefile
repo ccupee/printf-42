@@ -4,16 +4,32 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-HEAD_FILE = libft.h
+HEADER = includes/ft_printf.h
 
-SRCS = 		
+DIR_S = srcs
 
-OBJS = $(SRCS:.c=.o)
+DIR_O = obj
+
+SRCS = 	ft_eval_format.c \
+		ft_hexademical_lower.c \
+		ft_hexademical_lower0.c \
+		ft_hexademical_upper.c \
+		ft_printf.c \
+		ft_put_x.c \
+		ft_putx.c \
+		ft_putchar.c \
+		ft_putnbr_int.c \
+		ft_putnbr_unsigned.c \
+		ft_putpointer.c \
+		ft_putstr.c \
+		ft_strlen.c	
+
+OBJS = $(addprefix $(DIR_O), $(SRCS:.c=.o))
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o : %.c $(HEAD_FILE)
+$(DIR_O)/%.o : $(DIR_S)%.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
