@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_eval_format.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: spgibber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/12 17:20:49 by spgibber          #+#    #+#             */
+/*   Updated: 2021/11/12 17:20:51 by spgibber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
-int	ft_eval_format(t_print *tab, const char *format, int n, int* kol)
+int	ft_eval_format(t_print *tab, const char *format, int n, int *kol)
 {
 	if (format[n] == 'c')
 		ft_putchar((char)va_arg(tab->args, int), kol);

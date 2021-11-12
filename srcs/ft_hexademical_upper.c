@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hexademical_upper.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: spgibber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/12 17:23:54 by spgibber          #+#    #+#             */
+/*   Updated: 2021/11/12 17:23:56 by spgibber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 static int	ft_get_length(unsigned int number, int size)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (number > 0)
@@ -15,7 +27,7 @@ static int	ft_get_length(unsigned int number, int size)
 
 static char	*ft_string(char *str, char *base, unsigned int number, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (number == 0)
@@ -39,8 +51,8 @@ static char	*ft_string(char *str, char *base, unsigned int number, int len)
 char	*ft_hexademical_upper(unsigned int number)
 {
 	char	*str;
-	int 	size;
-	int 	len;
+	int		size;
+	int		len;
 	char	*base;
 
 	size = 16;
