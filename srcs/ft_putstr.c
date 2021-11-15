@@ -15,6 +15,7 @@
 void	ft_putstr(char *s, int *n)
 {
 	if (!s)
-		return ;
-	*n += write(1, s, ft_strlen(s));
+		*n += write(1, "(null)", 6);
+	else
+		*n += write(1, s, ft_strlen(s));
 }

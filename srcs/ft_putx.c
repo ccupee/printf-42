@@ -16,7 +16,12 @@ void	ft_putx(unsigned int number, int *n)
 {
 	char	*str;
 
-	str = ft_hexademical_lower0(number);
-	*n += write(1, str, ft_strlen(str));
-	free(str);
+	if (number == 0)
+		*n += write(1, "0", 1);
+	else
+	{
+		str = ft_hexademical_lower0(number);
+		*n += write(1, str, ft_strlen(str));
+		free(str);
+	}
 }

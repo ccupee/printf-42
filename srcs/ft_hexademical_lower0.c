@@ -17,10 +17,15 @@ static int	ft_get_length(unsigned int number, int size)
 	int	len;
 
 	len = 0;
-	while (number > 0)
+	if (number == 0)
+		len = 1;
+	else
 	{
-		number = number / size;
-		len ++;
+		while (number > 0)
+		{
+			number = number / size;
+			len ++;
+		}
 	}
 	return (len);
 }

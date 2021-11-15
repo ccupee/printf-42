@@ -16,8 +16,13 @@ void	ft_putpointer(unsigned long value, int *n)
 {
 	char	*str;
 
-	str = ft_hexademical_lower(value);
-	write(1, "0x", 2);
-	*n += write(1, str, ft_strlen(str)) + 2;
-	free(str);
+	*n += write(1, "0x", 2);
+	if (value == 0)
+		*n += write(1, "0", 1);
+	else
+	{
+		str = ft_hexademical_lower(value);
+		*n += write(1, str, ft_strlen(str));
+		free(str);
+	}
 }

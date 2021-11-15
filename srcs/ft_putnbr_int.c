@@ -48,7 +48,7 @@ static int	ft_power(int n)
 	return (result);
 }
 
-static void	ft_check(long n)
+static void	ft_check(long n, int *kol)
 {
 	char	c;
 
@@ -56,10 +56,10 @@ static void	ft_check(long n)
 	if (n < 9 && n > 0)
 	{
 		c = n + '0';
-		write (1, &c, 1);
+		*kol += write (1, &c, 1);
 	}
 	else if (n == 0)
-		write (1, "0", 1);
+		*kol += write (1, "0", 1);
 }	
 
 void	ft_putnbr_int(int n, int *kol)
@@ -77,7 +77,7 @@ void	ft_putnbr_int(int n, int *kol)
 	value = ft_abs(value);
 	count = ft_count(value);
 	if (value < 9 && value >= 0)
-		ft_check(value);
+		ft_check(value, kol);
 	else
 	{
 		while (i < count)
